@@ -7,8 +7,30 @@
     <title>Document</title>
 </head>
 <body>
- <p> 
- <h1>hola este es el saludo</h1>    
- <p>
+   
+    <h1 style="color: red; font-weight: bold; font-size: 36px; font-" > hola este es el saludo de la pagina web  </h1> 
+    
+    <p>el nombre de la persona es: {{nombre_persona.upper}} {{apellido_persona.upper}} <p>
+    
+    <p>
+      Hoy es:   {{tiempo.day}} del mes 0{{tiempo.month}} del a&ntildeo {{tiempo.year}} y son las {{tiempo.time}}
+    </p>
+    <p>
+        
+    {% if temas %}
+        {% for programas in temas %}
+
+          <li>  {{programas}} </li>
+
+        {% endfor %}
+    {% else %}
+    <p>No hay temas</p>
+    
+    {% endif %}
+        </ul>
+        
+        
+    <p/>
 </body>
 </html>
+ 

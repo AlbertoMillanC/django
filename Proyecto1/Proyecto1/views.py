@@ -4,7 +4,25 @@ from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
 
+class Persona(object):
+    
+    def __init__(self, nombre, apellido,):
+        
+        self.nombre = nombre
+        
+        self.apellido = apellido
+        
+       
+
 def saludo(request):
+    
+    p1=Persona("Profesor Juan","Perez")
+    
+    #nombre = "Juan"
+    #apellido = "Perez"
+    lenguajes_programcion = ["HTML","CSS","JavaScript","Python","PHP"]
+    ahora=datetime.datetime.now()
+
     
     doc_externo=open("Proyecto1/templates/saludo.html")
     
@@ -12,8 +30,8 @@ def saludo(request):
     
     doc_externo.close()
    
-    ctx=Context({'nombre':'Juan'})
-   
+    ctx=Context({"nombre_persona":p1.nombre,"apellido_persona":p1.apellido,"tiempo":ahora,"temas":lenguajes_programcion })      
+    
     documento=plt.render(ctx)
    
     return HttpResponse(documento)
