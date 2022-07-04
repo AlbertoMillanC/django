@@ -13,14 +13,14 @@
     <p>el nombre de la persona es: {{nombre_persona.upper}} {{apellido_persona.upper}} <p>
     
     <p>
-      Hoy es:   {{tiempo.day}} del mes 0{{tiempo.month}} del a&ntildeo {{tiempo.year}} y son las {{tiempo.time}}
+      Hoy es:   {{tiempo.day|upper}} del mes 0{{tiempo.month}} del a&ntildeo {{tiempo.year}} y son las {{tiempo.time}}
     </p>
     <p>
         
     {% if temas %}
         {% for programas in temas %}
 
-          <li>  {{programas}} </li>
+          <li>  {{programas|upper}} </li>
 
         {% endfor %}
     {% else %}
