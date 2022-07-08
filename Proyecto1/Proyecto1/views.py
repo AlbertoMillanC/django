@@ -3,7 +3,7 @@ from datetime import date
 from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
-from django.template import loader
+from django.template.loader import get_template
 class Persona(object):
     
     def __init__(self, nombre, apellido,):
@@ -30,7 +30,7 @@ def saludo(request):
     
     #doc_externo.close()
     
-    doc_externo=loader.get_template("saludo.html")
+    doc_externo=get_template("saludo.html")
    
     #ctx=Context({"nombre_persona":p1.nombre,"apellido_persona":p1.apellido,"tiempo":ahora,"temas":lenguajes_programcion })      
     
@@ -44,7 +44,7 @@ def despedida(request):
 
 def dameFecha(request):
     
-    fecha_actual=datetime.datetime.now()
+    fecha_actual=datetime.datetime.now(+1)
     
     documento="""
     <html>
