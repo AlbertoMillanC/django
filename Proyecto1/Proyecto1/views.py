@@ -13,7 +13,14 @@ class Persona(object):
         
         self.apellido = apellido
         
-       
+def pagina1(request):
+    
+    return render(request,"pagina1.html")
+
+def pagina2(request):
+    
+    return render(request,"pagina2.html")
+        
 
 def saludo(request):
     
