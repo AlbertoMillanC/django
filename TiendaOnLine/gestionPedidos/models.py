@@ -17,7 +17,6 @@ class Articulos(models.Model):
     descripcion = models.TextField()
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     stock = models.IntegerField()
-    imagen = models.ImageField(upload_to='articulos')
     fecha_alta = models.DateField(auto_now_add=True)
     
 class Pedidos(models.Model):
