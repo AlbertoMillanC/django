@@ -20,3 +20,10 @@ class Articulos(models.Model):
     imagen = models.ImageField(upload_to='articulos')
     fecha_alta = models.DateField(auto_now_add=True)
     
+class Pedidos(models.Model):
+    cliente = models.ForeignKey(Clientes, on_delete=models.CASCADE)
+    fecha = models.DateField(auto_now_add=True)
+    estado = models.CharField(max_length=50)
+    comentarios = models.TextField()
+    numero = models.IntegerField()
+    entregado = models.BooleanField(default=False)
