@@ -4,6 +4,7 @@ from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
 from django.template.loader import get_template
+from django.shortcuts import render
 class Persona(object):
     
     def __init__(self, nombre, apellido,):
@@ -30,17 +31,17 @@ def saludo(request):
     
     #doc_externo.close()
     
-    doc_externo=get_template("saludo.html")
+    #doc_externo=get_template("saludo.html")
    
     #ctx=Context({"nombre_persona":p1.nombre,"apellido_persona":p1.apellido,"tiempo":ahora,"temas":lenguajes_programcion })      
     
-    documento=doc_externo.render({"nombre_persona":p1.nombre,"apellido_persona":p1.apellido,"tiempo":ahora,"temas":lenguajes_programcion })
+    #documento=doc_externo.render({"nombre_persona":p1.nombre,"apellido_persona":p1.apellido,"tiempo":ahora,"temas":lenguajes_programcion })
    
-    return HttpResponse(documento)
+    return render(request,"saludo.html",{"nombre_persona":p1.nombre,"apellido_persona":p1.apellido,"tiempo":ahora,"temas":lenguajes_programcion })
 
 
 def despedida(request):
-    return HttpResponse("goodbye word")
+    return render("goodbye word")
 
 def dameFecha(request):
     
